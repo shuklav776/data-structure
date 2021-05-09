@@ -1,6 +1,7 @@
 package com.java.datastructure.sort;
 
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class BubbleSort {
 
@@ -15,6 +16,8 @@ public class BubbleSort {
 			arr[i] = sc.nextInt();
 		}
 
+		final long startTime = System.nanoTime();
+
 		for (int lastindex = len - 1; lastindex > 0; lastindex--) {
 			for (int i = 0; i < lastindex; i++) {
 				if (arr[i] > arr[i + 1]) {
@@ -22,6 +25,9 @@ public class BubbleSort {
 				}
 			}
 		}
+		
+		System.out.println("Extecution time of algo in nano sec: " + (System.nanoTime() - startTime));
+		System.out.println("Extecution time of algo in sec: " + TimeUnit.NANOSECONDS.toSeconds(System.nanoTime() - startTime));
 
 		for (int i = 0; i < arr.length; i++) {
 			System.out.println(arr[i]);
